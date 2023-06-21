@@ -1,0 +1,12 @@
+{
+  "name": "photo-micro-view",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Claytonrss/PhotoMicroView.git",
+  "author": "Clayton Souza <clayton.rssouza@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ]
+}
