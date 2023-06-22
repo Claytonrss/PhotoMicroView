@@ -10,10 +10,16 @@ export default defineConfig({
       name: "container",
       filename: "remoteEntry.js",
       remotes: {
-        PhotoList: "photolist@http://localhost:3001/remoteEntry.js",
-        PhotoDetail: "photodetail@http://localhost:3002/remoteEntry.js",
+        PhotoList: "http://localhost:3003/dist/assets/remoteEntry.js",
+        PhotoDetail: "http://localhost:3002/dist/assets/remoteEntry.js",
       },
-      shared: ["react", "react-dom"],
+      shared: ["react", "react-dom", "react-router-dom"],
     }),
   ],
+  build: {
+    target: "esnext",
+  },
+  server: {
+    port: 3001,
+  },
 });

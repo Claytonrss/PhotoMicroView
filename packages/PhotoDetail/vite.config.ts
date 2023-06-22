@@ -7,12 +7,18 @@ export default defineConfig({
   plugins: [
     react(),
     federation({
-      name: "photodetail",
+      name: "PhotoDetail",
       filename: "remoteEntry.js",
       exposes: {
-        "./PhotoDetail": "./src/PhotoDetail",
+        "./PhotoDetail": "./src/PhotoDetail.tsx",
       },
-      shared: ["react", "react-dom"],
+      shared: ["react", "react-dom", "react-router-dom"],
     }),
   ],
+  build: {
+    target: "esnext",
+  },
+  server: {
+    port: 3002,
+  },
 });
