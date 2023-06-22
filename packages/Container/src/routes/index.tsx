@@ -6,6 +6,8 @@ import {
 } from "react-router-dom";
 import Container from "../Container";
 
+const API_KEY = import.meta.env.VITE_API_KEY;
+
 const PhotoList = lazy(() => import("photolist/src/PhotoList"));
 const PhotoDetail = lazy(() => import("photodetail/src/PhotoDetail"));
 
@@ -15,8 +17,8 @@ const Routes = () => {
       <Suspense fallback={<div>Loading...</div>}>
         <RoutesContainer>
           <Route path="/" element={<Container />} />
-          <Route path="/photolist" element={<PhotoList />} />
-          <Route path="/photo/:id" element={<PhotoDetail />} />
+          <Route path="/photolist" element={<PhotoList apiKey={API_KEY} />} />
+          <Route path="/photo/:id" element={<PhotoDetail apiKey={API_KEY} />} />
         </RoutesContainer>
       </Suspense>
     </Router>
